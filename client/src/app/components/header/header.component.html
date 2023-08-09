@@ -1,0 +1,44 @@
+
+    <nav class="navbar navbar-expand-lg navbar-dark  d-flex align-items-center justify-content-between w-100 ">
+        <a class="navbar-brand" href="#">
+            <img src="https://cdn-icons-png.flaticon.com/128/978/978012.png" class="image-logo"
+                alt="logo" routerLink="/home">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item d-flex align-items-center" routerLink="/message/{{userId}}" (click)="onDeleteNotifications()">
+                    <a class="nav-link">
+                        <i class="far fa-comment" style="height: 26px; color: #fff;"></i>
+                    </a>
+                    <div style="background-color: red; height: 20px; width: 20px; border-radius: 10px; position: relative; bottom: 10px; left: -20px; display: flex;  justify-content: center;"
+                        *ngIf="notification.length !== 0">
+                        <p>{{notification.length}}</p>
+                    </div>
+    
+                </li>
+                <li class="nav-item w-100 dropdown">
+                    <a class="nav-link dropdown-toggle" *ngIf="avatar" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        style="color: #fff;" aria-haspopup="true" aria-expanded="false">
+                        <img src="{{avatar}}" alt="image" class="image">
+                    </a>
+                    <a class="nav-link dropdown-toggle" *ngIf="!avatar" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        style="color: #fff;" aria-haspopup="true" aria-expanded="false">
+                        <img src="https://cdn.vectorstock.com/i/1000x1000/08/48/man-icon-user-person-profile-avatar-symbol-vector-20910848.webp" alt="image" class="image">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" routerLink="/login">SignIn/SignUp</a>
+                        <a class="dropdown-item" routerLink="/feeds">Feeds</a>
+                        <a class="dropdown-item" routerLink="/friends">Friends</a>
+                        <a class="dropdown-item" (click)="onLogout()">Logout</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>

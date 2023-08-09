@@ -1,0 +1,134 @@
+.feeds-container{
+    display: flex;
+    height: 90vh;
+    box-shadow: 1px 1px 30px #989898;
+    
+  }
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  
+  .content-container{
+      width:100%;
+      overflow: auto;
+      background-color:#ffffff;
+      padding: 20px;
+  }
+  @media screen and (max-width:768px) {
+      .content-container{
+          width: 100%;
+          padding: 10px;
+          background-color: transparent;
+          border-radius: 0;
+          color: #000;
+      }
+  }
+  
+  
+  .profile-image{
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+  }
+  
+  .posted-user-image{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+  } 
+  
+  .suggestions-container{
+      width: 16%;
+  }
+  @media screen and (max-width:768px) {
+      .suggestions-container{
+          display: none;
+      }
+  }
+  
+  
+  .commented-image{
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+  }
+  
+  @media screen and (max-width:768px) {
+      app-sidebar{
+          display: none;
+      }
+  }
+
+  .image{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .image:hover{
+    border-radius: 0;
+  }
+
+  .trending-container{
+    width: 580px;
+    background-color: #ffffff;
+    padding: 20px;
+  }
+  @media screen and (max-width:912px) {
+    .trending-container{
+        display: none;
+    }
+  }
+
+  @media screen and (max-width:768px) {
+    .date{
+        display: none;
+    }
+  }
+
+  @media screen and (max-width:768px) {
+    .image{
+        width: 60px;
+        height: 60px;
+    }
+  }
+
+
+  .story{
+    width: 160px;
+     border-radius: 50%;
+      margin-right: 10px;
+  }
+
+  @media screen and (max-width:768px) {
+    .story{
+        width: 60px;
+    }
+  }
+
+
+  .posts-container{
+    display: flex;
+    align-items: center;
+  }
+  @media screen and (max-width:768px) {
+    .posts-container{
+      flex-direction: column;
+    }
+  }
+
+  .form-card{
+    width: 50%;
+  }
+  @media screen and (max-width:768px) {
+    .form-card{
+      width: 100%;
+    }
+  }
+
+  .card{
+    box-shadow: 1px 1px 20px #9c9c9c;
+  }

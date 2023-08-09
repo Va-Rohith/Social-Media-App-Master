@@ -1,0 +1,28 @@
+.friends-container{
+    background-color: #c1cbdc;
+    height: 90vh;
+    overflow: auto;
+    padding: 20px;
+}
+
+
+.image{
+    height: 300px;
+    width: 240px;
+}
+@media screen and (max-width:768px) {
+    .image{
+        height: 200px;
+        width: 140px;
+    }
+}
+
+.follower-item{
+    background-color: #fff;
+}
+
+@media screen and (max-width:768px) {
+    app-sidebar{
+        display: none;
+    }
+}

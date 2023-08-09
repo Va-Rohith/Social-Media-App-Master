@@ -1,0 +1,54 @@
+<div class="d-flex w-100" style="background-color: #fff;">
+    <app-sidebar></app-sidebar>
+    <div class="friends-container w-100" *ngIf="followersData.length !== 0">
+        <div *ngFor="let follower of followersData">
+            <div *ngIf="follower.userId._id === userId">
+                <div class="follower-item d-flex mb-4 p-2" style="gap: 20px; border: 1px solid #c0bfbf;">
+                    <img [src]="follower.followingId.avatar" alt="" class="image">
+                    <div class="d-flex flex-column justify-content-between">
+                        <h1>{{ follower.followingId.username }}</h1>
+                        <div>
+                            <div>
+                                <h5>Followers {{ followingLength }}</h5>
+                            </div>
+                            <div>
+                                <h5>Following {{ followersLength }} </h5>
+                            </div>
+                            <div>
+                                <h5>Posts {{ follower.followingId.posts }}</h5>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" (click)="sendMessage(follower.followingId._id)">Message</button>
+                    </div>
+                </div>
+            </div>
+            <!-- <div *ngIf="follower.userId._id !== userId">
+                <div class="follower-item d-flex mb-4 p-2" style="gap: 20px; border: 1px solid #c0bfbf;">
+                    <img [src]="follower.userId.avatar" alt="" class="image">
+                    <div class="d-flex flex-column justify-content-between">
+                        <h1>{{ follower.userId.username }}</h1>
+                        <div>
+                            <div>
+                                <h5>Followers {{  followingLength}}</h5>
+                            </div>
+                            <div>
+                                <h5>Following {{  followersLength }}</h5>
+                            </div>
+                            <div>
+                                <h5>Posts {{ follower.userId.posts }}</h5>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" (click)="sendMessage(follower.userId._id)">Message</button>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+    </div>
+    <div *ngIf="followersData.length === 0"
+        style="width: 100%; height: 90vh; display: flex;flex-direction: column; justify-content: center; align-items: center;">
+        <img src="https://www.shutterstock.com/image-vector/sad-young-man-holding-smartphone-260nw-653329696.jpg"
+            alt="">
+        <h1>You do not have any friends.</h1>
+    </div>
+</div>

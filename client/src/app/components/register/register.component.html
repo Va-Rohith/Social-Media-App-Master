@@ -1,0 +1,72 @@
+<div class="container-fluid">
+    <div class="registration-container">
+        <img src="https://static.vecteezy.com/system/resources/previews/003/689/228/non_2x/online-registration-or-sign-up-login-for-account-on-smartphone-app-user-interface-with-secure-password-mobile-application-for-ui-web-banner-access-cartoon-people-illustration-vector.jpg" alt="" class="image" />
+        <div class="card">
+            <form [formGroup]="regForm" #r="ngForm" (ngSubmit)="onSubmit(r.value)" class="form">
+                <h2 class="heading text-center">Registration Form</h2>
+                <div class="form-group mb-2">
+                    <label for="firstname">First Name</label>
+                    <input placeholder="Enter firstname" type="text" class="form-control" id="firstname" formControlName="firstname" required>
+                    <div *ngIf="regForm.controls['firstname'].touched && regForm.controls['firstname']?.['errors']">
+                        <div *ngIf="regForm.controls['firstname']?.['errors']?.['required']"
+                            class="error-message text-danger">
+                            Firstname is required
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group mb-2">
+                    <label for="lastname">Last Name</label>
+                    <input placeholder="Enter lastname" type="text" class="form-control" id="lastname" formControlName="lastname" required>
+                    <div *ngIf="regForm.controls['lastname'].touched && regForm.controls['lastname']?.['errors']">
+                        <div *ngIf="regForm.controls['lastname']?.['errors']?.['required']"
+                            class="error-message text-danger">
+                            Lastname is required
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <label for="username">User Name</label>
+                    <input placeholder="Enter username" type="text" class="form-control" id="username" formControlName="username" required>
+                    <div *ngIf="regForm.controls['username'].touched && regForm.controls['username']?.['errors']">
+                        <div *ngIf="regForm.controls['username']?.['errors']?.['required']"
+                            class="error-message text-danger">
+                            Username is required
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <label for="email">Email</label>
+                    <input placeholder="Enter email" type="text" class="form-control" id="email" formControlName="email" required>
+                    <div *ngIf="regForm.controls['email'].touched && regForm.controls['email']?.['errors']">
+                        <div *ngIf="regForm.controls['email']?.['errors']?.['required']" class="error-message text-danger">
+                            Email is required
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <label for="password">Password</label>
+                    <input placeholder="Enter password" type="text" class="form-control" id="password" formControlName="password" required>
+                    <div *ngIf="regForm.controls['password'].touched && regForm.controls['password']?.['errors']">
+                        <div *ngIf="regForm.controls['password']?.['errors']?.['required']"
+                            class="error-message text-danger">
+                            Password is required
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <label for="avatar">Avatar</label>
+                    <input placeholder="Enter Avatar Image Url" type="text" class="form-control" id="avatar" formControlName="avatar">
+                    <!-- <div *ngIf="regForm.controls['avatar'].touched && regForm.controls['avatar']?.['errors']">
+                        <div *ngIf="regForm.controls['avatar']?.['errors']?.['required']"
+                            class="error-message text-danger">
+                            Avatar is required
+                        </div>
+                    </div> -->
+                </div>
+                <button type="submit" class="btn btn-primary mt-4 w-100" [disabled]="regForm.invalid" >Sign Up</button>
+                <div class="mt-2"><a routerLink="/login" class="mt-2">Already have an account? click here</a></div>
+            </form>
+        </div>
+    </div>
+</div>

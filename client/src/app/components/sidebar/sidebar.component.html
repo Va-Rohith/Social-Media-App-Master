@@ -1,0 +1,37 @@
+<div class="sidebar" [ngClass]="{ 'sidebar-hidden': isSidebarHidden }">
+    <div class="sidebar-header">      
+      <!-- <img src="https://seeklogo.com/images/A/abstract-socialapp-logo-B3EC60F7BA-seeklogo.com.png" *ngIf="!isSidebarHidden" class="image-logo" alt="logo" routerLink="/feeds"> -->
+      <!-- <button class="btn icon" (click)="toggleSidebar()" style="cursor: pointer;">
+        <i class="fa fa-bars"></i>
+    </button> -->
+
+    </div>
+    <div class="p-3 card mb-2 w-100 text-center" style="background-color: #fff;box-shadow: 0 0 15px #d4d4d4; border: none;">
+      <div class="text-center"> 
+        <img src="{{user.avatar}}" alt="" style="border-radius: 50%; height: 140px; width: 140px;">
+      </div>
+      <h1>{{user.username}}</h1>
+      <div class="d-flex justify-content-between">
+      <div class="text-center">
+        <p style="margin: 0;">Followers</p>
+        <p style="margin: 0;">{{followers.length}}</p>
+      </div>
+      <div class="text-center">
+        <p style="margin: 0;">Following</p>
+        <p style="margin: 0;">{{following.length}}</p>
+      </div>
+      <div class="text-center">
+        <p style="margin: 0;">Posts</p>
+        <p style="margin: 0;"> {{posts.length}}</p>
+      </div>
+      </div>
+    </div>
+    <ul class="nav flex-column">
+      <li class="nav-item" *ngFor="let item of data">
+        <a class="nav-link" [routerLink]="item.path" routerLinkActive="active">
+          <i class="{{item.icon}}" class="sidebar-icon"></i>
+          <span class="sidebar-text" *ngIf="!isSidebarHidden">{{ item.name }}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
